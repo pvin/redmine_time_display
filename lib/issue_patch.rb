@@ -32,7 +32,7 @@ module IssuePatch
 
     def subtask_spent_hours
       time = 0.00
-      i.descendants.each do |i|
+      descendants.each do |i|
         time = time + i.time_entries.sum(:hours)
       end
       @subtask_spent_hours = time.to_f
